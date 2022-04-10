@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,200&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,12 +7,50 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: rgb(17 24 39);
 }
 
 main {
-  min-height: 85vh;
+  min-height: 88vh;
 }
 
 .transitional {
   transition: all 0.5s ease-in-out;
+}
+
+.hover-up,
+.hover-down {
+  transition: transform 0.5s ease-in-out;
+}
+.hover-down:hover {
+  transform: translateY(25%);
+}
+.hover-up:hover {
+  transform: translateY(-25%);
+}
+
+.transition-up {
+  transition: transform 1s ease-in-out;
+}
+.transitional {
+  transition: all 0.5s ease-in-out;
+}
+
+.animate-float {
+  animation: float 9s ease-in-out infinite;
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(25px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }

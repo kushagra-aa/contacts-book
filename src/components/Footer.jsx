@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="w-screen gap-3 align-middle justify-center capitalize flex text-yellow-600 border-t-2 border-yellow-100">
+    <footer className="pt-1 w-screen gap-3 align-middle justify-center capitalize flex text-yellow-600 bg-gray-800">
       <p>&copy; contacts book</p>
       <p className="lowercase">
         by{" "}
