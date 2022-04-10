@@ -7,3 +7,11 @@
   margin: 0px;
   box-sizing: border-box;
 }
+
+main {
+  min-height: 85vh;
+}
+
+.transitional {
+  transition: all 0.5s ease-in-out;
+}

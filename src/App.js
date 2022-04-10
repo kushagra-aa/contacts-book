@@ -1,7 +1,28 @@
+import { ToastContainer } from "react-toastify";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 function App() {
   return (
     <div className="App">
-      <h1 className="text-red-200 text-ellipsis">hello</h1>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={true}
+        closeOnClick
+        rtl={false}
+        theme={"dark"}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <Header />
+      <main className="">
+        <Home />
+      </main>
+      <Footer />
     </div>
   );
 }
