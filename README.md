@@ -11,6 +11,7 @@ Built with 🤍 For You!
 ### Home Page
 
 ![page screenshot](https://user-images.githubusercontent.com/68841296/162624599-b7da535d-6c3e-4645-900a-986b0774cd60.png)
+![image](https://user-images.githubusercontent.com/68841296/163666724-40621409-eeb3-40b5-80f0-dd19449ca3ca.png)
 
 ## Made using
 
