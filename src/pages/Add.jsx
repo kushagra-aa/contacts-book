@@ -26,7 +26,7 @@ const Add = () => {
 
     // sending the data to store
     const data = {
-      id: contacts[contacts.length - 1].id + 1,
+      id: contacts.length === 0 ? 0 : contacts[contacts.length - 1].id + 1,
       name: name,
       email: email,
       number: number,

@@ -7,7 +7,7 @@ const Home = () => {
       <h1 className="text-lg lg:text-8xl text-yellow-400 font-extrabold uppercase w-1/4 mt-16">
         contact book
       </h1>
-      <p className="text-lg text-base text-yellow-50 w-1/2 lg:w-1/6 font-light">
+      <p className="text-lg text-yellow-50 w-1/2 lg:w-1/6 font-light">
         Store all your conatcts at one place
       </p>
       <div className="flex flex-col gap-2 mt-5">

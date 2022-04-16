@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Edit = () => {
@@ -140,7 +140,7 @@ const Edit = () => {
               placeholder="Enter email"
             />
           </div>
-          <div className="form-group">
+          <div className="form-group space-x-3">
             <input
               type="submit"
               className="
@@ -155,14 +155,14 @@ const Edit = () => {
   uppercase
   rounded
   shadow-md
-  hover:bg-yellow-300 hover:shadow-lg
+  hover:bg-yellow-300 hover:text-yellow-900 hover:shadow-lg
   focus:bg-yellow-300 focus:shadow-lg focus:outline-none focus:ring-0
   active:bg-yellow-600 active:shadow-lg
   mb-3
   transitional"
               value="Save"
             />
-            <button
+            <Link
               className="
       w-full
       lg:w-1/3
@@ -176,14 +176,14 @@ const Edit = () => {
   uppercase
   rounded
   shadow-md
-  hover:bg-yellow-300 hover:shadow-lg
+  hover:bg-yellow-300 hover:text-yellow-900 hover:shadow-lg
   focus:bg-yellow-300 focus:shadow-lg focus:outline-none focus:ring-0
   active:bg-yellow-600 active:shadow-lg
   transitional"
-              onClick={() => histroy(-1)}
+              to="/contacts"
             >
               cancle
-            </button>
+            </Link>
           </div>
         </form>
       ) : (

@@ -14,44 +14,65 @@ const Contacts = () => {
   return (
     <div className="flex flex-col gap-9 p-10 relative">
       <h1 className="text-white text-5xl">Your Contacts</h1>
-      {/* contacts table */}
-      <table className=" rounded-sm  table w-max table-auto">
-        {/* table headdings */}
-        <tr className="row text-white uppercase font-bold bg-gray-700 rounded-sm gap-5 p-3">
-          <th className="col px-5 py-1 border-r-2 border-yellow-900">s.no</th>
-          <th className="col px-5 py-1 border-r-2 border-yellow-900">name</th>
-          <th className="col px-5 py-1 border-r-2 border-yellow-900">number</th>
-          <th className="col px-5 py-1 border-r-2 border-yellow-900">email</th>
-          <th className="col px-5 py-1">actions</th>
-        </tr>
+      <div className="items-center justify-center rounded-sm w-full sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 flex-col flex">
         {/* mapping all contacts */}
-        {contacts.map((contact) => (
-          <tr className="row bg-gray-800 border-t-2 border-yellow-900 text-white">
-            <td className="text-yellow-300 col px-5 py-2">{contact.id}</td>
-            <td className="capitalize col px-5 py-2">{contact.name}</td>
-            <td className="col px-5 py-2">
-              <a href={`tel:${contact.number}`}>{contact.number}</a>
-            </td>
-            <td className="col px-5 py-2">
-              <a href={`mailto:${contact.email}`}>{contact.email}</a>
-            </td>
-            <td className="col px-5 py-2 flex gap-5">
-              <Link
-                className="p-2 px-6 text-gray-900 bg-red-200 rounded-sm capitalize"
-                to={`/edit/${contact.id}`}
-              >
-                edit
-              </Link>
-              <button
-                className="p-2 bg-red-600 text-gray-900 rounded-sm capitalize"
-                onClick={() => deleteContact(contact.id)}
-              >
-                remove
-              </button>
-            </td>
-          </tr>
-        ))}
-      </table>
+
+        {contacts?.length > 0 && contacts ? (
+          contacts?.map((contact) => (
+            <div
+              key={contact.id}
+              className="bg-gray-800 border-b-2 flex gap-3 flex-col justify-center items-center w-64 h-72 border-yellow-900 text-white"
+            >
+              <div className="uppercase bg-yellow-400 rounded-full text-2xl col px-4 py-2">
+                {contact?.name
+                  .split(" ")
+                  .map(function (item) {
+                    return item[0];
+                  })
+                  .join("")}
+              </div>
+              <div className="capitalize col">{contact?.name}</div>
+              <div className="col text-yellow-100">
+                <a href={`tel:${contact?.number}`}>{contact?.number}</a>
+              </div>
+              <div className="col w-11/12 text-center">
+                <a
+                  className="break-all w-full block"
+                  href={`mailto:${contact?.email}`}
+                >
+                  {contact?.email}
+                </a>
+              </div>
+              <div className="col flex gap-5">
+                <Link
+                  className={`p-2 text-gray-900 bg-red-200 rounded-sm capitalize`}
+                  to={`/edit/${contact?.id}`}
+                >
+                  edit
+                </Link>
+                <button
+                  className={`p-2 bg-red-600 text-gray-900 rounded-sm capitalize`}
+                  onClick={() => deleteContact(contact?.id)}
+                >
+                  remove
+                </button>
+              </div>
+            </div>
+          ))
+        ) : (
+          <>
+            <p className="text-lg capitalize text-yellow-50 w-full font-light">
+              no contacts found
+            </p>
+            <Link
+              to="/add"
+              className="hover:bg-yellow-500 transitional  p-2 capitalize bg-yellow-400 w-max rounded-sm text-gray-900 text-xl shadow-sm"
+            >
+              add new conatct
+            </Link>
+          </>
+        )}
+      </div>
     </div>
   );
 };
