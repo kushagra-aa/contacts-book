@@ -1,4 +1,4 @@
-# Know The Place
+# Contacts Book
 
   <img src="./src/assets/logo.png" width="100px" height="100px">
 
